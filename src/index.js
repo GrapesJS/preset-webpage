@@ -7,7 +7,22 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
   let config = opts;
 
   let defaults = {
-    // default options
+    // Modal import title
+    modalImportTitle: 'Import',
+
+    // Modal import button text
+    modalImportButton: 'Import',
+
+    // Import description inside import modal
+    modalImportLabel: '',
+
+    // Default content to setup on import model open.
+    // Could also be a function with a dynamic content return (must be a string)
+    // eg. modalImportContent: editor => editor.getHtml(),
+    modalImportContent: '',
+
+    importViewerOptions: {},
+
   };
 
   // Load defaults
