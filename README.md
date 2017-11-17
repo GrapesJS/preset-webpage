@@ -5,6 +5,8 @@
 ## Summary
 
 * Plugin name: `gjs-preset-webpage`
+* Commands
+  * `gjs-open-import-webpage` Opens a modal for the import
 * Components: `new-component1`, `new-component2`, ...
 * Blocks: `new-block1`, `new-block1`, ...
 
