@@ -101,4 +101,16 @@ export default (editor, config) => {
     command: cmdDeviceMobile,
     className: 'fa fa-mobile',
   }]);
+
+  // On component change show the Style Manager
+  config.showStylesOnChange && editor.on('component:selected', () => {
+    const openLayersBtn = pn.getButton('views', ola);
+
+    // Don't switch when the Layer Manager is on or
+    // there is no selected component
+    if ((!openLayersBtn || !openLayersBtn.get('active')) && editor.getSelected()) {
+      const openSmBtn = pn.getButton('views', osm);
+      openSmBtn && openSmBtn.set('active', 1);
+    }
+  });
 }

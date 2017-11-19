@@ -39,6 +39,9 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     // Confirm text before cleaning the canvas
     textCleanCanvas: 'Are you sure to clean the canvas?',
 
+    // Show the Style Manager on component change
+    showStylesOnChange: 1,
+
     // `grapesjs-blocks-basic` plugin options
     // By setting this option to `false` will avoid loading the plugin
     blocksBasicOpts: {},
@@ -106,4 +109,5 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
 
   // Load panels
   panels(editor, config);
+
 });
