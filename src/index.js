@@ -38,13 +38,16 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     // `grapesjs-component-countdown` plugin options
     // By setting this option to `false` will avoid loading the plugin
     countdownOpts: {},
+
+    // `grapesjs-plugin-forms` plugin options
+    // By setting this option to `false` will avoid loading the plugin
+    formsOpts: {},
   };
 
   /*
   plugins: [
           'gjs-plugin-export', 'gjs-plugin-filestack',
-          'gjs-aviary',  'gjs-preset-webpage',
-          'gjs-component-countdown', 'gjs-plugin-forms'
+          'gjs-aviary',
         ],
    */
 
