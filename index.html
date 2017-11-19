@@ -15,6 +15,14 @@
         height: 100%;
         margin: 0;
       }
+
+      .gjs-pn-panel#gjs-pn-commands {
+          width: 200px;
+      }
+      #gjs-pn-devices-c {
+        width: 85%;
+        z-index: 1;
+      }
     </style>
   </head>
   <body>
@@ -44,6 +52,13 @@
 
       editor.on('storage:load', (e) =>  console.log('Loaded ', e));
       editor.on('storage:store', (e) =>  console.log('Stored ', e));
+
+      /*
+        updateTooltip(deviceBtns);
+        updateTooltip(pnm.getPanel('options').get('buttons'));
+        updateTooltip(pnm.getPanel('options').get('buttons'));
+        updateTooltip(pnm.getPanel('views').get('buttons'));
+       */
     </script>
   </body>
 </html>

@@ -10,6 +10,7 @@ import pluginFilestack from 'grapesjs-plugin-filestack';
 import commands from './commands';
 import blocks from './blocks';
 import components from './components';
+import panels from './panels';
 
 export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) => {
   let config = opts;
@@ -102,4 +103,7 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
 
   // Load commands
   commands(editor, config);
+
+  // Load panels
+  panels(editor, config);
 });
