@@ -48,6 +48,10 @@ export default (editor, config) => {
       codeViewer.setContent(cnt || '');
       modal.open();
       viewerEditor.refresh();
+    },
+
+    stop() {
+      modal.close();
     }
-  };
+  }
 }

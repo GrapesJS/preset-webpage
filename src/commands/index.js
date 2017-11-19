@@ -1,40 +1,12 @@
-import openImport from './openImport';
+import openImport from './OpenImport';
 
 export default (editor, config) => {
   const cm = editor.Commands;
+  const txtConfirm = config.textCleanCanvas;
 
   cm.add('gjs-open-import-webpage', openImport(editor, config));
-
-  cm.add('undo', {
-    run(editor) {
-      editor.UndoManager.undo(1);
-    }
-  });
-
-  cm.add('redo', {
-    run(editor) {
-      editor.UndoManager.redo(1);
-    }
-  });
-
-
-  // Device commands
-
-  cm.add('set-device-desktop', {
-    run(editor) {
-      editor.setDevice('Desktop');
-    }
-  });
-
-  cm.add('set-device-tablet', {
-    run(editor) {
-      editor.setDevice('Tablet');
-    }
-  });
-
-  cm.add('set-device-mobile', {
-    run(editor) {
-      editor.setDevice('Mobile portrait');
-    }
-  });
+  cm.add('set-device-desktop', e => e.setDevice('Desktop'));
+  cm.add('set-device-tablet', e => e.setDevice('Tablet'));
+  cm.add('set-device-mobile', e => e.setDevice('Mobile portrait'));
+  cm.add('canvas-clear', e => confirm(txtConfirm) && e.runCommand('core:canvas-clear'));
 }

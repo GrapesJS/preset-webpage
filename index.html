@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>GrapesJS Preset Webpage</title>
     <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/grapesjs"></script>
+    <!-- <script src="https://unpkg.com/grapesjs"></script> -->
+    <script src="private/grapes.min.js"></script>
     <script src="dist/grapesjs-preset-webpage.min.js"></script>
     <style>
       body,
@@ -38,7 +39,9 @@
           'gjs-preset-webpage': {}
         }
       });
-      window.editor = editor;
+
+      editor.on('storage:load', (e) =>  console.log('Loaded ', e));
+      editor.on('storage:store', (e) =>  console.log('Stored ', e));
     </script>
   </body>
 </html>

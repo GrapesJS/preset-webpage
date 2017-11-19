@@ -1,7 +1,7 @@
 import grapesjs from 'grapesjs';
 import commands from './commands';
+import blocks from './blocks';
 import loadComponents from './components';
-import loadBlocks from './blocks';
 
 export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) => {
   let config = opts;
@@ -21,9 +21,24 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     // eg. modalImportContent: editor => editor.getHtml(),
     modalImportContent: '',
 
+    // Code viewer (eg. CodeMirror) options
     importViewerOptions: {},
 
+    // Confirm text before cleaning the canvas
+    textCleanCanvas: 'Are you sure to clean the canvas?',
+
+    // `Basic Blocks` plugin options
+    // By setting this option to `false` will avoid loading `Basic Blocks` plugin
+    blocksBasicOpts: {},
   };
+
+  /*
+  plugins: [
+          'gjs-plugin-export', 'gjs-plugin-filestack',
+          'gjs-aviary', 'gjs-blocks-basic', 'gjs-preset-webpage',
+          'gjs-navbar', 'gjs-component-countdown', 'gjs-plugin-forms'
+        ],
+   */
 
   // Load defaults
   for (let name in defaults) {
@@ -34,8 +49,8 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
   // Add components
   loadComponents(editor, config);
 
-  // Add blocks
-  loadBlocks(editor, config);
+  // Load blocks
+  blocks(editor, config);
 
   // Load commands
   commands(editor, config);
