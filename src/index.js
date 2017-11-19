@@ -27,13 +27,17 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     // Confirm text before cleaning the canvas
     textCleanCanvas: 'Are you sure to clean the canvas?',
 
-    // `Basic Blocks` plugin options
-    // By setting this option to `false` will avoid loading `Basic Blocks` plugin
+    // `grapesjs-blocks-basic` plugin options
+    // By setting this option to `false` will avoid loading the plugin
     blocksBasicOpts: {},
 
-    // `Navbar` plugin options
-    // By setting this option to `false` will avoid loading `Navbar` plugin
+    // `grapesjs-navbar` plugin options
+    // By setting this option to `false` will avoid loading the plugin
     navbarOpts: {},
+
+    // `grapesjs-component-countdown` plugin options
+    // By setting this option to `false` will avoid loading the plugin
+    countdownOpts: {},
   };
 
   /*

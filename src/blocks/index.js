@@ -1,12 +1,17 @@
 import pluginBlocks from 'grapesjs-blocks-basic';
 import pluginNavbar from 'grapesjs-navbar';
+import pluginCountdown from 'grapesjs-component-countdown';
 
 export default (editor, config) => {
   const bm = editor.BlockManager;
-  const blocksBasic = config.blocksBasicOpts;
-  const navbarOpts = config.navbarOpts;
+  const {
+    blocksBasicOpts,
+    navbarOpts,
+    countdownOpts
+  } = config;
 
   // Load plugin
-  blocksBasic && pluginBlocks(editor, blocksBasic);
+  blocksBasicOpts && pluginBlocks(editor, blocksBasicOpts);
   navbarOpts && pluginNavbar(editor, navbarOpts);
+  countdownOpts && pluginCountdown(editor, countdownOpts);
 }
