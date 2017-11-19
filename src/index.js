@@ -30,13 +30,17 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     // `Basic Blocks` plugin options
     // By setting this option to `false` will avoid loading `Basic Blocks` plugin
     blocksBasicOpts: {},
+
+    // `Navbar` plugin options
+    // By setting this option to `false` will avoid loading `Navbar` plugin
+    navbarOpts: {},
   };
 
   /*
   plugins: [
           'gjs-plugin-export', 'gjs-plugin-filestack',
-          'gjs-aviary', 'gjs-blocks-basic', 'gjs-preset-webpage',
-          'gjs-navbar', 'gjs-component-countdown', 'gjs-plugin-forms'
+          'gjs-aviary',  'gjs-preset-webpage',
+          'gjs-component-countdown', 'gjs-plugin-forms'
         ],
    */
 

@@ -5,6 +5,11 @@
 ## Summary
 
 * Plugin name: `gjs-preset-webpage`
+* Includes
+  * `grapesjs-blocks-basic` Basic set of blocks
+  * `grapesjs-navbar` Simple navbar component
+  * `grapesjs-component-countdown` Simple countdown component
+  * `grapesjs-plugin-forms` Set of form components and blocks
 * Commands
   * `gjs-open-import-webpage` Opens a modal for the import
 * Components: `new-component1`, `new-component2`, ...
