@@ -47,6 +47,7 @@
     "grapesjs-blocks-basic": "^0.1.2",
     "grapesjs-component-countdown": "^0.1.1",
     "grapesjs-navbar": "^0.1.3",
+    "grapesjs-plugin-export": "^0.1.5",
     "grapesjs-plugin-filestack": "^0.1.1",
     "grapesjs-plugin-forms": "^0.3.4"
   }

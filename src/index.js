@@ -3,6 +3,7 @@ import pluginBlocks from 'grapesjs-blocks-basic';
 import pluginNavbar from 'grapesjs-navbar';
 import pluginCountdown from 'grapesjs-component-countdown';
 import pluginForms from 'grapesjs-plugin-forms';
+import pluginExport from 'grapesjs-plugin-export';
 import pluginAviary from 'grapesjs-aviary';
 import pluginFilestack from 'grapesjs-plugin-filestack';
 
@@ -50,6 +51,10 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     // By setting this option to `false` will avoid loading the plugin
     formsOpts: {},
 
+    // `grapesjs-plugin-export` plugin options
+    // By setting this option to `false` will avoid loading the plugin
+    exportOpts: {},
+
     // `grapesjs-aviary` plugin options, disabled by default
     // Aviary library should be included manually
     // By setting this option to `false` will avoid loading the plugin
@@ -63,7 +68,7 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
 
   /*
   plugins: [
-          'gjs-plugin-export', 'gjs-plugin-filestack',
+          'gjs-plugin-export',
         ],
    */
 
@@ -78,6 +83,7 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     navbarOpts,
     countdownOpts,
     formsOpts,
+    exportOpts,
     aviaryOpts,
     filestackOpts
   } = config;
@@ -87,6 +93,7 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
   navbarOpts && pluginNavbar(editor, navbarOpts);
   countdownOpts && pluginCountdown(editor, countdownOpts);
   formsOpts && pluginForms(editor, formsOpts);
+  exportOpts && pluginExport(editor, exportOpts);
   aviaryOpts && pluginAviary(editor, aviaryOpts);
   filestackOpts && pluginFilestack(editor, filestackOpts);
 
