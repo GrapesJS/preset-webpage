@@ -3,6 +3,8 @@ import pluginBlocks from 'grapesjs-blocks-basic';
 import pluginNavbar from 'grapesjs-navbar';
 import pluginCountdown from 'grapesjs-component-countdown';
 import pluginForms from 'grapesjs-plugin-forms';
+import pluginAviary from 'grapesjs-aviary';
+import pluginFilestack from 'grapesjs-plugin-filestack';
 
 import commands from './commands';
 import blocks from './blocks';
@@ -47,12 +49,21 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     // `grapesjs-plugin-forms` plugin options
     // By setting this option to `false` will avoid loading the plugin
     formsOpts: {},
+
+    // `grapesjs-aviary` plugin options, disabled by default
+    // Aviary library should be included manually
+    // By setting this option to `false` will avoid loading the plugin
+    aviaryOpts: 0,
+
+    // `grapesjs-plugin-filestack` plugin options, disabled by default
+    // Filestack library should be included manually
+    // By setting this option to `false` will avoid loading the plugin
+    filestackOpts: 0,
   };
 
   /*
   plugins: [
           'gjs-plugin-export', 'gjs-plugin-filestack',
-          'gjs-aviary',
         ],
    */
 
@@ -66,7 +77,9 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     blocksBasicOpts,
     navbarOpts,
     countdownOpts,
-    formsOpts
+    formsOpts,
+    aviaryOpts,
+    filestackOpts
   } = config;
 
   // Load plugins
@@ -74,6 +87,8 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
   navbarOpts && pluginNavbar(editor, navbarOpts);
   countdownOpts && pluginCountdown(editor, countdownOpts);
   formsOpts && pluginForms(editor, formsOpts);
+  aviaryOpts && pluginAviary(editor, aviaryOpts);
+  filestackOpts && pluginFilestack(editor, filestackOpts);
 
   // Add components
   loadComponents(editor, config);

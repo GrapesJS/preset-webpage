@@ -10,6 +10,9 @@
   * `grapesjs-navbar` Simple navbar component
   * `grapesjs-component-countdown` Simple countdown component
   * `grapesjs-plugin-forms` Set of form components and blocks
+  * `grapesjs-aviary` Add the Aviary Image Editor
+  * `grapesjs-plugin-filestack` Add Filestack uploader in Asset Manager
+  * `grapesjs-plugin-export` Export GrapesJS templates in a zip archive
 * Commands
   * `gjs-open-import-webpage` Opens a modal for the import
 * Components: `new-component1`, `new-component2`, ...
