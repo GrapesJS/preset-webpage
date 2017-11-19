@@ -9,7 +9,7 @@ import pluginFilestack from 'grapesjs-plugin-filestack';
 
 import commands from './commands';
 import blocks from './blocks';
-import loadComponents from './components';
+import components from './components';
 
 export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) => {
   let config = opts;
@@ -66,12 +66,6 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     filestackOpts: 0,
   };
 
-  /*
-  plugins: [
-          'gjs-plugin-export',
-        ],
-   */
-
   // Load defaults
   for (let name in defaults) {
     if (!(name in config))
@@ -97,15 +91,12 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
   aviaryOpts && pluginAviary(editor, aviaryOpts);
   filestackOpts && pluginFilestack(editor, filestackOpts);
 
-  // Add components
-  loadComponents(editor, config);
+  // Load components
+  components(editor, config);
 
   // Load blocks
   blocks(editor, config);
 
   // Load commands
   commands(editor, config);
-
-  // TODO Remove
-  editor.on('load', () => editor.addComponents(`<div style="margin:0 100px; padding:25px;">Content loaded from the plugin</div>`))
 });
