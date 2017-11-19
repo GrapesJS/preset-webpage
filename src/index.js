@@ -1,4 +1,9 @@
 import grapesjs from 'grapesjs';
+import pluginBlocks from 'grapesjs-blocks-basic';
+import pluginNavbar from 'grapesjs-navbar';
+import pluginCountdown from 'grapesjs-component-countdown';
+import pluginForms from 'grapesjs-plugin-forms';
+
 import commands from './commands';
 import blocks from './blocks';
 import loadComponents from './components';
@@ -56,6 +61,19 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     if (!(name in config))
       config[name] = defaults[name];
   }
+
+  const {
+    blocksBasicOpts,
+    navbarOpts,
+    countdownOpts,
+    formsOpts
+  } = config;
+
+  // Load plugins
+  blocksBasicOpts && pluginBlocks(editor, blocksBasicOpts);
+  navbarOpts && pluginNavbar(editor, navbarOpts);
+  countdownOpts && pluginCountdown(editor, countdownOpts);
+  formsOpts && pluginForms(editor, formsOpts);
 
   // Add components
   loadComponents(editor, config);
