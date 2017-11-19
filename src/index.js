@@ -15,6 +15,9 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
   let config = opts;
 
   let defaults = {
+    // Which blocks to add
+    blocks: ['link-block', 'quote', 'text-basic'],
+
     // Modal import title
     modalImportTitle: 'Import',
 

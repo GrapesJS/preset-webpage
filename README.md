@@ -24,7 +24,7 @@
 
 ## Options
 
-* `option1` Description option, default: `default value`
+* `blocks` Which blocks to add, default: `['h-navbar']` (all),
 
 
 
