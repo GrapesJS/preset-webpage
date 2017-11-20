@@ -6,22 +6,13 @@
     <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
     <script src="//feather.aviary.com/imaging/v3/editor.js"></script>
     <script src="https://static.filestackapi.com/v3/filestack-0.1.10.js"></script>
-    <!-- <script src="https://unpkg.com/grapesjs"></script> -->
-    <script src="private/grapes.min.js"></script>
+    <script src="https://unpkg.com/grapesjs"></script>
     <script src="dist/grapesjs-preset-webpage.min.js"></script>
     <style>
       body,
       html {
         height: 100%;
         margin: 0;
-      }
-
-      .gjs-pn-panel#gjs-pn-commands {
-          width: 200px;
-      }
-      #gjs-pn-devices-c {
-        width: 85%;
-        z-index: 1;
       }
     </style>
   </head>
@@ -49,16 +40,6 @@
           'gjs-preset-webpage': {}
         }
       });
-
-      editor.on('storage:load', (e) =>  console.log('Loaded ', e));
-      editor.on('storage:store', (e) =>  console.log('Stored ', e));
-
-      /*
-        updateTooltip(deviceBtns);
-        updateTooltip(pnm.getPanel('options').get('buttons'));
-        updateTooltip(pnm.getPanel('options').get('buttons'));
-        updateTooltip(pnm.getPanel('views').get('buttons'));
-       */
     </script>
   </body>
 </html>
