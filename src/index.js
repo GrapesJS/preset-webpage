@@ -11,6 +11,7 @@ import commands from './commands';
 import blocks from './blocks';
 import components from './components';
 import panels from './panels';
+import styles from './styles';
 
 export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) => {
   let config = opts;
@@ -41,6 +42,21 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
 
     // Show the Style Manager on component change
     showStylesOnChange: 1,
+
+    // Text for General sector in Style Manager
+    textGeneral: 'General',
+
+    // Text for Layout sector in Style Manager
+    textLayout: 'Layout',
+
+    // Text for Typography sector in Style Manager
+    textTypography: 'Typography',
+
+    // Text for Decorations sector in Style Manager
+    textDecorations: 'Decorations',
+
+    // Text for Extra sector in Style Manager
+    textExtra: 'Extra',
 
     // `grapesjs-blocks-basic` plugin options
     // By setting this option to `false` will avoid loading the plugin
@@ -109,5 +125,8 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
 
   // Load panels
   panels(editor, config);
+
+  // Load styles
+  styles(editor, config);
 
 });
