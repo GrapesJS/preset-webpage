@@ -15,8 +15,11 @@
   * `grapesjs-plugin-export` Export GrapesJS templates in a zip archive
 * Commands
   * `gjs-open-import-webpage` Opens a modal for the import
-* Components: `new-component1`, `new-component2`, ...
-* Blocks: `new-block1`, `new-block1`, ...
+  * `set-device-desktop` Set desktop device
+  * `set-device-tablet` Setup tablet device
+  * `set-device-mobile` Setup mobile device
+  * `canvas-clear` Clear all components and styles inside canvas
+* Blocks: `link-block`, `quote`, `text-basic`
 
 
 
