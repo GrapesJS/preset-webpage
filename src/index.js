@@ -58,6 +58,9 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     // Text for Extra sector in Style Manager
     textExtra: 'Extra',
 
+    // Use custom set of sectors for the Style Manager
+    customStyleManager: [],
+
     // `grapesjs-blocks-basic` plugin options
     // By setting this option to `false` will avoid loading the plugin
     blocksBasicOpts: {},

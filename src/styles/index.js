@@ -1,7 +1,8 @@
 export default (editor, config) => {
   const sm = editor.StyleManager;
+  const csm = config.customStyleManager;
 
-  sm.getSectors().reset([{
+  sm.getSectors().reset(csm && csm.length ? csm : [{
     name: config.textGeneral,
     open: false,
     buildProps: ['float', 'display', 'position', 'top', 'right', 'left', 'bottom'],
