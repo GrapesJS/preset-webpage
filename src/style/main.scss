@@ -1,10 +1,19 @@
 @import "variables.scss";
 
-.gjs-pn-panel#gjs-pn-commands {
-  width: 200px;
-}
+.#{$prefix} {
+  @each $cnum, $ccol in (one, $primaryColor), (two, $secondaryColor), (three, $tertiaryColor), (four, $quaternaryColor) {
+    &#{$cnum} {
+      &-bg {
+        background-color: $ccol;
+      }
 
-#gjs-pn-devices-c {
-  width: 85%;
-  z-index: 1;
+      &-color {
+        color: $ccol;
+
+        &-h:hover {
+          color: $ccol;
+        }
+      }
+    }
+  }
 }

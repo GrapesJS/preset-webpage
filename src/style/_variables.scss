@@ -1,9 +1,8 @@
 /* Class names prefixes */
-$app-prefix:        'gjs-' !default;
+$prefix: 'gjs-' !default;
 
 /* Colors / Theme */
-
-$mainColor:         #373d49 !default;
-$fontColor:         #a0aabf !default;
-$active-color:      #35d7bb !default;
-$tag-color:         #4c9790 !default;
+$primaryColor: #463a3c;
+$secondaryColor: #b9a5a6;
+$tertiaryColor: #804f7b;
+$quaternaryColor: #d97aa6;
