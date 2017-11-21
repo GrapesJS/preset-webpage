@@ -27,8 +27,29 @@
 
 ## Options
 
-* `blocks` Which blocks to add, default: `['h-navbar']` (all),
-
+|Option|Description|Default|
+|-|-|-
+|`blocks`|Which blocks to add|`['link-block', 'quote', 'text-basic']` (all)|
+|`modalImportTitle`|Modal import title|`Import`|
+|`modalImportButton`|Modal import button text|`Import`|
+|`modalImportLabel`|Import description inside import modal|`''`|
+|`modalImportContent`|Default content to setup on import model open. Could also be a function with a dynamic content return (must be a string) eg. `modalImportContent: editor => editor.getHtml()`|`''`|
+|`importViewerOptions`|Code viewer (eg. CodeMirror) options|`{}`|
+|`textCleanCanvas`|Confirm text before cleaning the canvas|`Are you sure to clean the canvas?`|
+|`showStylesOnChange`|Show the Style Manager on component change|`true`|
+|`textGeneral`|Text for General sector in Style Manager|`General`|
+|`textLayout`|Text for Layout sector in Style Manager|`Layout`|
+|`textTypography`|Text for Typography sector in Style Manager|`Typography`|
+|`textDecorations`|Text for Decorations sector in Style Manager|`Decorations`|
+|`textExtra`|Text for Extra sector in Style Manager|`Extra`|
+|`customStyleManager`|Use custom set of sectors for the Style Manager|`[]`|
+|`blocksBasicOpts`|`grapesjs-blocks-basic` plugin options. By setting this option to `false` will avoid loading the plugin|`{}`|
+|`navbarOpts`|`grapesjs-navbar` plugin options. By setting this option to `false` will avoid loading the plugin|`{}`|
+|`countdownOpts`|`grapesjs-component-countdown` plugin options. By setting this option to `false` will avoid loading the plugin|`{}`|
+|`formsOpts`|`grapesjs-plugin-forms` plugin options. By setting this option to `false` will avoid loading the plugin|`{}`|
+|`exportOpts`|`grapesjs-plugin-export` plugin options. By setting this option to `false` will avoid loading the plugin|`{}`|
+|`aviaryOpts`|`grapesjs-aviary` plugin options. Aviary library should be included manually. By setting this option to `false` will avoid loading the plugin|`{}`|
+|`filestackOpts`|`grapesjs-plugin-filestack` plugin options. Filestack library should be included manually. By setting this option to `false` will avoid loading the plugin|`{}`|
 
 
 
