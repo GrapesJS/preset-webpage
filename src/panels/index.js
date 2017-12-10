@@ -44,8 +44,8 @@ export default (editor, config) => {
       className: 'fa fa-arrows-alt',
     },{
       id: expt,
-      command: expt,
       className: 'fa fa-code',
+      command: e => e.runCommand(expt),
     },{
       id: 'undo',
       className: 'fa fa-undo',
