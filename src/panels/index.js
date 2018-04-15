@@ -68,6 +68,7 @@ export default (editor, config) => {
     buttons  : [{
       id: osm,
       command: osm,
+      active: true,
       className: 'fa fa-paint-brush',
     },{
       id: otm,
@@ -79,7 +80,6 @@ export default (editor, config) => {
       className: 'fa fa-bars',
     },{
       id: obl,
-      active: true,
       command: obl,
       className: 'fa fa-th-large',
     }],
@@ -102,14 +102,17 @@ export default (editor, config) => {
     className: 'fa fa-mobile',
   }]);
 
+  const openBl = pn.getButton('views', obl);
+  editor.on('load', () => openBl && openBl.set('active', 1));
+
   // On component change show the Style Manager
   config.showStylesOnChange && editor.on('component:selected', () => {
+    const openSmBtn = pn.getButton('views', osm);
     const openLayersBtn = pn.getButton('views', ola);
 
     // Don't switch when the Layer Manager is on or
     // there is no selected component
     if ((!openLayersBtn || !openLayersBtn.get('active')) && editor.getSelected()) {
-      const openSmBtn = pn.getButton('views', osm);
       openSmBtn && openSmBtn.set('active', 1);
     }
   });
