@@ -13,6 +13,7 @@
   * `grapesjs-plugin-export` Export GrapesJS templates in a zip archive
 * Commands:
   * `gjs-open-import-webpage` Opens a modal for the import
+  * `gjs-open-edit-webpage` Opens a modal for edit code
   * `set-device-desktop` Set desktop device
   * `set-device-tablet` Setup tablet device
   * `set-device-mobile` Setup mobile device
@@ -32,6 +33,11 @@
 | `modalImportLabel` | Import description inside import modal | `''` |
 | `modalImportContent` | Default content to setup on import model open. Could also be a function with a dynamic content return (must be a string) eg. `modalImportContent: editor => editor.getHtml()` | `''` |
 | `importViewerOptions` | Code viewer (eg. CodeMirror) options | `{}` |
+| `modalEditTitle` | Modal edit title | `'Edit'` |
+| `modalEditButton` | Modal edit button text | `'Save'` |
+| `modalEditLabel` | Edit description inside edit modal | `''` |
+| `modalEditContent` | Default content to setup on edit model open. Could also be a function with a dynamic content return (must be a string) eg. `modalEditContent: editor => editor.getHtml()` | `''` |
+| `editViewerOptions` | Code viewer (eg. CodeMirror) options | `{}` |
 | `textCleanCanvas` | Confirm text before cleaning the canvas | `'Are you sure to clean the canvas?'` |
 | `showStylesOnChange` | Show the Style Manager on component change | `true` |
 | `textGeneral` | Text for General sector in Style Manager | `'General'` |
