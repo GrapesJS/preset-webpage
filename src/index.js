@@ -37,6 +37,18 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     // Code viewer (eg. CodeMirror) options
     importViewerOptions: {},
 
+    // Modal edit title
+    modalEditTitle: 'Edit',
+
+    // Modal edit button text
+    modalEditButton: 'Save',
+
+    modalEditLabel: 'Edit here HTML/CSS code and click Save',
+
+    modalEditContent: editor => editor.getHtml(),
+
+    editViewerOptions: {},
+
     // Confirm text before cleaning the canvas
     textCleanCanvas: 'Are you sure to clean the canvas?',
 

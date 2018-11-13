@@ -1,10 +1,12 @@
 import {
   cmdImport,
+  cmdEdit,
   cmdDeviceDesktop,
   cmdDeviceTablet,
   cmdDeviceMobile,
   cmdClear
 } from './../consts';
+import openEdit from "../commands/openEdit";
 
 export default (editor, config) => {
   const pn = editor.Panels;
@@ -19,6 +21,7 @@ export default (editor, config) => {
   const obl = 'open-blocks';
   const ful = 'fullscreen';
   const prv = 'preview';
+  const edt = 'edit';
 
   eConfig.showDevices = 0;
 
@@ -37,6 +40,11 @@ export default (editor, config) => {
       context: prv,
       command: e => e.runCommand(prv),
       className: 'fa fa-eye',
+    },{
+      id: edt,
+      context: edt,
+      command:  e => e.runCommand(cmdEdit),
+      className: 'fa fa-edit',
     },{
       id: ful,
       command: ful,

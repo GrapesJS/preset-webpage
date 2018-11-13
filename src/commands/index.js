@@ -1,6 +1,8 @@
 import openImport from './openImport';
+import openEdit from './openEdit';
 import {
   cmdImport,
+  cmdEdit,
   cmdDeviceDesktop,
   cmdDeviceTablet,
   cmdDeviceMobile,
@@ -12,6 +14,7 @@ export default (editor, config) => {
   const txtConfirm = config.textCleanCanvas;
 
   cm.add(cmdImport, openImport(editor, config));
+  cm.add(cmdEdit, openEdit(editor, config));
   cm.add(cmdDeviceDesktop, e => e.setDevice('Desktop'));
   cm.add(cmdDeviceTablet, e => e.setDevice('Tablet'));
   cm.add(cmdDeviceMobile, e => e.setDevice('Mobile portrait'));
