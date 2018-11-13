@@ -50,10 +50,10 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     textLayout: 'Layout',
 
     // Text for Typography sector in Style Manager
-    textTypography: 'Typography',
+    textTypography: 'Font Options',
 
     // Text for Decorations sector in Style Manager
-    textDecorations: 'Decorations',
+    textDecorations: 'Block',
 
     // Text for Extra sector in Style Manager
     textExtra: 'Extra',
