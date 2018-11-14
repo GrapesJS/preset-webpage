@@ -75,7 +75,9 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
 
     // `grapesjs-blocks-basic` plugin options
     // By setting this option to `false` will avoid loading the plugin
-    blocksBasicOpts: {},
+    blocksBasicOpts: {
+        blocks: ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'map'],
+    },
 
     // `grapesjs-navbar` plugin options
     // By setting this option to `false` will avoid loading the plugin
