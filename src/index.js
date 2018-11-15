@@ -1,8 +1,8 @@
 import grapesjs from 'grapesjs';
 import pluginBlocks from 'grapesjs-blocks-basic';
-import pluginNavbar from 'grapesjs-navbar';
-import pluginCountdown from 'grapesjs-component-countdown';
-import pluginForms from 'grapesjs-plugin-forms';
+// import pluginNavbar from 'grapesjs-navbar';
+// import pluginCountdown from 'grapesjs-component-countdown';
+// import pluginForms from 'grapesjs-plugin-forms';
 import pluginExport from 'grapesjs-plugin-export';
 import pluginAviary from 'grapesjs-aviary';
 import pluginFilestack from 'grapesjs-plugin-filestack';
@@ -18,7 +18,7 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
 
   let defaults = {
     // Which blocks to add
-    blocks: ['link-block', 'quote', 'text-basic'],
+    blocks: [ 'text-basic', 'quote', 'link-block'],
 
     // Modal import title
     modalImportTitle: 'Import',
@@ -76,7 +76,7 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     // `grapesjs-blocks-basic` plugin options
     // By setting this option to `false` will avoid loading the plugin
     blocksBasicOpts: {
-        blocks: ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'map'],
+        blocks: ['text', 'image', 'link', 'column1', 'column2', 'column3', 'column3-7'],
     },
 
     // `grapesjs-navbar` plugin options
@@ -114,9 +114,9 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
 
   const {
     blocksBasicOpts,
-    navbarOpts,
-    countdownOpts,
-    formsOpts,
+    // navbarOpts,
+    // countdownOpts,
+    // formsOpts,
     exportOpts,
     aviaryOpts,
     filestackOpts
@@ -124,9 +124,9 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
 
   // Load plugins
   blocksBasicOpts && pluginBlocks(editor, blocksBasicOpts);
-  navbarOpts && pluginNavbar(editor, navbarOpts);
-  countdownOpts && pluginCountdown(editor, countdownOpts);
-  formsOpts && pluginForms(editor, formsOpts);
+  // navbarOpts && pluginNavbar(editor, navbarOpts);
+  // countdownOpts && pluginCountdown(editor, countdownOpts);
+  // formsOpts && pluginForms(editor, formsOpts);
   exportOpts && pluginExport(editor, exportOpts);
   aviaryOpts && pluginAviary(editor, aviaryOpts);
   filestackOpts && pluginFilestack(editor, filestackOpts);

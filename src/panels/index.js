@@ -14,7 +14,7 @@ export default (editor, config) => {
   const crc = 'create-comp';
   const mvc = 'move-comp';
   const swv = 'sw-visibility';
-  const expt = 'export-template';
+  // const expt = 'export-template';
   const osm = 'open-sm';
   const otm = 'open-tm';
   const ola = 'open-layers';
@@ -36,24 +36,10 @@ export default (editor, config) => {
       context: swv,
       className: 'fa fa-square-o',
     },{
-      id: prv,
-      context: prv,
-      command: e => e.runCommand(prv),
-      className: 'fa fa-eye',
-    },{
       id: edt,
       context: edt,
       command:  e => e.runCommand(cmdEdit),
-      className: 'fa fa-edit',
-    },{
-      id: ful,
-      command: ful,
-      context: ful,
-      className: 'fa fa-arrows-alt',
-    },{
-      id: expt,
       className: 'fa fa-code',
-      command: e => e.runCommand(expt),
     },{
       id: 'undo',
       className: 'fa fa-undo',
@@ -62,14 +48,6 @@ export default (editor, config) => {
       id: 'redo',
       className: 'fa fa-repeat',
       command: e => e.runCommand('core:redo'),
-    },{
-      id: cmdImport,
-      className: 'fa fa-download',
-      command: e => e.runCommand(cmdImport),
-    },{
-      id: cmdClear,
-      className: 'fa fa-trash',
-      command: e => e.runCommand(cmdClear),
     }],
   },{
     id: 'views',
@@ -78,14 +56,6 @@ export default (editor, config) => {
       command: osm,
       active: true,
       className: 'fa fa-paint-brush',
-    },{
-      id: otm,
-      command: otm,
-      className: 'fa fa-cog',
-    },{
-      id: ola,
-      command: ola,
-      className: 'fa fa-bars',
     },{
       id: obl,
       command: obl,
@@ -96,6 +66,16 @@ export default (editor, config) => {
   // Add devices buttons
   const panelDevices = pn.addPanel({id: 'devices-c'});
   panelDevices.get('buttons').add([{
+      id: prv,
+      context: prv,
+      command: e => e.runCommand(prv),
+      className: 'fa fa-eye',
+  },{
+      id: ful,
+      command: ful,
+      context: ful,
+      className: 'fa fa-arrows-alt',
+  },{
     id: cmdDeviceDesktop,
     command: cmdDeviceDesktop,
     className: 'fa fa-desktop',
