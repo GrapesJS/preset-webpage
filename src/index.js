@@ -196,6 +196,14 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
                     { value: 'justify', name: 'Justify', className: 'fa fa-align-justify'}
                 ],
             }],
+    },{
+        name: 'Block / Element',
+        open: false,
+        buildProps: ['background-color', 'border-radius', 'border', 'box-shadow', 'background'],
+    },{
+        name: 'Size',
+        open: false,
+        buildProps: ['width', 'height', 'max-width', 'min-height', 'margin', 'padding'],
     }],
 
     // `grapesjs-blocks-basic` plugin options
