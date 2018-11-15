@@ -1,9 +1,5 @@
 import grapesjs from 'grapesjs';
 import pluginBlocks from 'grapesjs-blocks-basic';
-// import pluginNavbar from 'grapesjs-navbar';
-// import pluginCountdown from 'grapesjs-component-countdown';
-// import pluginForms from 'grapesjs-plugin-forms';
-import pluginExport from 'grapesjs-plugin-export';
 import pluginAviary from 'grapesjs-aviary';
 import pluginFilestack from 'grapesjs-plugin-filestack';
 
@@ -70,8 +66,137 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     // Text for Extra sector in Style Manager
     textExtra: 'Extra',
 
+      canvas: {
+          styles: [
+              '<link href="https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Acme|Alegreya|Alegreya+Sans|Anton|Archivo|Archivo+Black|Archivo+Narrow|Arimo|Arvo|Asap|Asap+Condensed|Bitter|Bowlby+One+SC|Bree+Serif|Cabin|Cairo|Catamaran|Crete+Round|Crimson+Text|Cuprum|Dancing+Script|Dosis|Droid+Sans|Droid+Serif|EB+Garamond|Exo|Exo+2|Faustina|Fira+Sans|Fjalla+One|Francois+One|Gloria+Hallelujah|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Julee|Karla|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Mada|Manuale|Maven+Pro|Merriweather|Merriweather+Sans|Montserrat|Montserrat+Subrayada|Mukta+Vaani|Muli|Noto+Sans|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Caption|PT+Sans+Narrow|PT+Serif|Pacifico|Passion+One|Pathway+Gothic+One|Play|Playfair+Display|Poppins|Questrial|Quicksand|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Ropa+Sans|Rubik|Saira|Saira+Condensed|Saira+Extra+Condensed|Saira+Semi+Condensed|Sedgwick+Ave|Sedgwick+Ave+Display|Shadows+Into+Light|Signika|Slabo+27px|Source+Code+Pro|Source+Sans+Pro|Spectral|Titillium+Web|Ubuntu|Ubuntu+Condensed|Varela+Round|Vollkorn|Work+Sans|Yanone+Kaffeesatz|Zilla+Slab|Zilla+Slab+Highlight" rel="stylesheet">',
+          ],
+      },
+
     // Use custom set of sectors for the Style Manager
-    customStyleManager: [],
+    customStyleManager: [{
+        name: 'Font / Typography',
+        open: false,
+        buildProps: ['font-family', 'font-size', 'font-weight', 'letter-spacing', 'color', 'line-height', 'text-align'],
+        properties:[
+            { name: 'Font', property: 'font-family',
+                defaults: 'Roboto',
+                list: [
+                    { value: 'Roboto'},
+                    { value: 'Zilla Slab Highlight'},
+                    { value: 'Open Sans'},
+                    { value: 'Spectral'},
+                    { value: 'Slabo 27px'},
+                    { value: 'Lato'},
+                    { value: 'Roboto Condensed'},
+                    { value: 'Oswald'},
+                    { value: 'Source Sans Pro'},
+                    { value: 'Raleway'},
+                    { value: 'Zilla Slab'},
+                    { value: 'Montserrat'},
+                    { value: 'PT Sans'},
+                    { value: 'Roboto Slab'},
+                    { value: 'Merriweather'},
+                    { value: 'Saira Condensed'},
+                    { value: 'Saira'},
+                    { value: 'Open Sans Condensed'},
+                    { value: 'Saira Semi Condensed'},
+                    { value: 'Saira Extra Condensed'},
+                    { value: 'Julee'},
+                    { value: 'Archivo'},
+                    { value: 'Ubuntu'},
+                    { value: 'Lora'},
+                    { value: 'Manuale'},
+                    { value: 'Asap Condensed'},
+                    { value: 'Faustina'},
+                    { value: 'Cairo'},
+                    { value: 'Playfair Display'},
+                    { value: 'Droid Serif'},
+                    { value: 'Noto Sans'},
+                    { value: 'PT Serif'},
+                    { value: 'Droid Sans'},
+                    { value: 'Arimo'},
+                    { value: 'Poppins'},
+                    { value: 'Sedgwick Ave Display'},
+                    { value: 'Titillium Web'},
+                    { value: 'Muli'},
+                    { value: 'Sedgwick Ave'},
+                    { value: 'Indie Flower'},
+                    { value: 'Mada'},
+                    { value: 'PT Sans Narrow'},
+                    { value: 'Noto Serif'},
+                    { value: 'Bitter'},
+                    { value: 'Dosis'},
+                    { value: 'Josefin Sans'},
+                    { value: 'Inconsolata'},
+                    { value: 'Bowlby One SC'},
+                    { value: 'Oxygen'},
+                    { value: 'Arvo'},
+                    { value: 'Hind'},
+                    { value: 'Cabin'},
+                    { value: 'Fjalla One'},
+                    { value: 'Anton'},
+                    { value: 'Cairo'},
+                    { value: 'Playfair Display'},
+                    { value: 'Droid Serif'},
+                    { value: 'Noto Sans'},
+                    { value: 'PT Serif'},
+                    { value: 'Droid Sans'},
+                    { value: 'Arimo'},
+                    { value: 'Poppins'},
+                    { value: 'Sedgwick Ave Display'},
+                    { value: 'Titillium Web'},
+                    { value: 'Muli'},
+                    { value: 'Sedgwick Ave'},
+                    { value: 'Indie Flower'},
+                    { value: 'Mada'},
+                    { value: 'PT Sans Narrow'},
+                    { value: 'Noto Serif'},
+                    { value: 'Bitter'},
+                    { value: 'Dosis'},
+                    { value: 'Josefin Sans'},
+                    { value: 'Inconsolata'},
+                    { value: 'Bowlby One SC'},
+                    { value: 'Oxygen'},
+                    { value: 'Arvo'},
+                    { value: 'Hind'},
+                    { value: 'Cabin'},
+                    { value: 'Fjalla One'},
+                    { value: 'Anton'},
+                    { value: 'Acme'},
+                    { value: 'Archivo Narrow'},
+                    { value: 'Mukta Vaani'},
+                    { value: 'Play'},
+                    { value: 'Cuprum'},
+                    { value: 'Maven Pro'},
+                    { value: 'EB Garamond'},
+                    { value: 'Passion One'},
+                    { value: 'Ropa Sans'},
+                    { value: 'Francois One'},
+                    { value: 'Archivo Black'},
+                    { value: 'Pathway Gothic One'},
+                    { value: 'Exo'},
+                    { value: 'Vollkorn'},
+                    { value: 'Libre Franklin'},
+                    { value: 'Crete Round'},
+                    { value: 'Alegreya'},
+                    { value: 'PT Sans Caption'},
+                    { value: 'Alegreya Sans'},
+                    { value: 'Source Code Pro'},
+                ],},
+            { name: 'Weight', property: 'font-weight'},
+            { name: 'Font color', property: 'color'},
+            {
+                property: 'text-align',
+                type: 'radio',
+                defaults: 'left',
+                list: [
+                    { value: 'left', name: 'Left', className: 'fa fa-align-left'},
+                    { value: 'center', name: 'Center', className: 'fa fa-align-center' },
+                    { value: 'right', name: 'Right', className: 'fa fa-align-right'},
+                    { value: 'justify', name: 'Justify', className: 'fa fa-align-justify'}
+                ],
+            }],
+    }],
 
     // `grapesjs-blocks-basic` plugin options
     // By setting this option to `false` will avoid loading the plugin
@@ -114,20 +239,12 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
 
   const {
     blocksBasicOpts,
-    // navbarOpts,
-    // countdownOpts,
-    // formsOpts,
-    exportOpts,
     aviaryOpts,
     filestackOpts
   } = config;
 
   // Load plugins
   blocksBasicOpts && pluginBlocks(editor, blocksBasicOpts);
-  // navbarOpts && pluginNavbar(editor, navbarOpts);
-  // countdownOpts && pluginCountdown(editor, countdownOpts);
-  // formsOpts && pluginForms(editor, formsOpts);
-  exportOpts && pluginExport(editor, exportOpts);
   aviaryOpts && pluginAviary(editor, aviaryOpts);
   filestackOpts && pluginFilestack(editor, filestackOpts);
 
