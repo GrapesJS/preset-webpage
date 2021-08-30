@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  node:
+    build:
+      context: ./node/
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    tty: true
+    working_dir: /var/www
+    volumes:
+      - ../:/var/www
+    ports:
+      - "3000:3000"
+      - "8080:8080"

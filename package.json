@@ -7,7 +7,7 @@
     "lint": "eslint src",
     "v:patch": "npm version --no-git-tag-version patch",
     "build": "npm run v:patch && webpack --env.production && npm run build:css",
-    "start": "webpack-dev-server --open --progress --colors & npm run build:css -- -w",
+    "start": "webpack-dev-server --open --progress --colors --host 0.0.0.0 --inline --content-base . & npm run build:css -- -w",
     "build:css": "node-sass src/style/main.scss dist/grapesjs-preset-webpage.min.css --output-style compressed"
   },
   "repository": {
