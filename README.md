@@ -50,9 +50,10 @@
 
 ## Download
 
-```sh
-$ npm i grapesjs-preset-webpage
-```
+* CDN
+  * `https://unpkg.com/grapesjs-preset-webpage`
+* NPM
+  * `npm i grapesjs-preset-webpage`
 
 ## Usage
 
