@@ -45,7 +45,6 @@
 | `countdownOpts` | `grapesjs-component-countdown` plugin options. By setting this option to `false` will avoid loading the plugin | `{}` |
 | `formsOpts` | `grapesjs-plugin-forms` plugin options. By setting this option to `false` will avoid loading the plugin | `{}` |
 | `exportOpts` | `grapesjs-plugin-export` plugin options. By setting this option to `false` will avoid loading the plugin | `{}` |
-| `aviaryOpts` | `grapesjs-aviary` plugin options. Aviary library should be included manually. By setting this option to `false` will avoid loading the plugin | `false` |
 | `filestackOpts` | `grapesjs-plugin-filestack` plugin options. Filestack library should be included manually. By setting this option to `false` will avoid loading the plugin | `false` |
 
 ## Download
