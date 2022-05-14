@@ -8,7 +8,6 @@ let plugins = [];
 const rootDir = path.resolve(__dirname);
 
 module.exports = (env = {}) => {
-  console.log(env)
   if (env.production) {
     plugins = [
       new webpack.optimize.UglifyJsPlugin({ minimize: true, compressor: { warnings: false }}),
