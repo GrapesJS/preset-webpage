@@ -1,7 +1,6 @@
 import type grapesjs from 'grapesjs';
 import commands from './commands';
 import blocks from './blocks';
-import components from './components';
 import panels from './panels';
 import styles from './styles';
 
@@ -88,9 +87,6 @@ const plugin: grapesjs.Plugin<PluginOptions> = (editor, opts: Partial<PluginOpti
     //customStyleManager: [],
     ...opts,
   };
-
-  // Load components
-  components(editor, config);
 
   // Load blocks
   blocks(editor, config);
