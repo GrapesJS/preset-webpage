@@ -9,9 +9,9 @@ import {
   cmdClear
 } from './consts';
 
-export default (editor: grapesjs.Editor, config: RequiredPluginOptions) => {
+export default (editor: grapesjs.Editor, opts: RequiredPluginOptions) => {
   const { Panels } = editor;
-  const eConfig = editor.getConfig();
+  const config = editor.getConfig();
   const swv = 'sw-visibility';
   const expt = 'export-template';
   const osm = 'open-sm';
@@ -23,7 +23,7 @@ export default (editor: grapesjs.Editor, config: RequiredPluginOptions) => {
   const iconStyle = 'style="display: block"';
 
   // @ts-ignore
-  eConfig.showDevices = false;
+  config.showDevices = false;
 
   Panels.getPanels().reset([
     {
@@ -139,7 +139,7 @@ export default (editor: grapesjs.Editor, config: RequiredPluginOptions) => {
   editor.on('load', () => openBl?.set('active', true));
 
   // On component change show the Style Manager
-  config.showStylesOnChange && editor.on('component:selected', () => {
+  opts.showStylesOnChange && editor.on('component:selected', () => {
     const openSmBtn = Panels.getButton('views', osm);
     const openLayersBtn = Panels.getButton('views', ola);
 
