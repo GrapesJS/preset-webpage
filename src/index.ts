@@ -86,7 +86,7 @@ const plugin: grapesjs.Plugin<PluginOptions> = (editor, opts: Partial<PluginOpti
     // textExtra: 'Extra',
 
     // Use custom set of sectors for the Style Manager
-    //customStyleManager: [],
+    // customStyleManager: [],
     ...opts,
   };
 
