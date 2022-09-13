@@ -3,6 +3,7 @@
   "version": "0.1.11",
   "description": "GrapesJS Plugin Webpage Preset",
   "main": "dist/index.js",
+  "files": ["dist/"],
   "scripts": {
     "build": "grapesjs-cli build",
     "start": "grapesjs-cli serve",
