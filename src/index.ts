@@ -56,8 +56,10 @@ export type PluginOptions = {
    showStylesOnChange?: boolean;
 };
 
+export type RequiredPluginOptions = Required<PluginOptions>;
+
 const plugin: grapesjs.Plugin<PluginOptions> = (editor, opts: Partial<PluginOptions> = {}) => {
-  const config: PluginOptions = {
+  const config: RequiredPluginOptions = {
     // Which blocks to add
     blocks: ['link-block', 'quote', 'text-basic'],
     modalImportTitle: 'Import',
