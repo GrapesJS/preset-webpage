@@ -1,9 +1,11 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const pkg = require('./package.json');
 const webpack = require('webpack');
 const fs = require('fs');
 const name = pkg.name;
 let plugins = [];
+const rootDir = path.resolve(__dirname);
 
 module.exports = (env = {}) => {
   if (env.production) {
@@ -26,10 +28,16 @@ module.exports = (env = {}) => {
         library: name,
         libraryTarget: 'umd',
     },
+    devServer: {
+      ...env.devServer,
+      static: [rootDir],
+      headers: { 'Access-Control-Allow-Origin': '*' },
+      allowedHosts: 'all',
+    },
     module: {
-      loaders: [{
+      rules: [{
           test: /\.js$/,
-          loader: 'babel-loader',
+          use: 'babel-loader',
           include: /src/,
       }],
     },
