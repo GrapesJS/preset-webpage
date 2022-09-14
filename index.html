@@ -5,9 +5,7 @@
     <title>GrapesJS Preset Webpage</title>
     <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
     <link href="dist/grapesjs-preset-webpage.min.css" rel="stylesheet">
-    <script src="https://static.filestackapi.com/v3/filestack-0.1.10.js"></script>
     <script src="https://unpkg.com/grapesjs"></script>
-    <script src="dist/grapesjs-preset-webpage.min.js"></script>
     <style>
       body,
       html {
@@ -82,18 +80,20 @@
 
 
     <script type="text/javascript">
-      var editor = grapesjs.init({
-        height: '100%',
-        showOffsets: 1,
-        noticeOnUnload: 0,
-        storageManager: { autoload: 0 },
-        container: '#gjs',
-        fromElement: true,
+      setTimeout(() => {
+        window.editor = grapesjs.init({
+          height: '100%',
+          showOffsets: true,
+          noticeOnUnload: false,
+          storageManager: false,
+          container: '#gjs',
+          fromElement: true,
 
-        plugins: ['gjs-preset-webpage'],
-        pluginsOpts: {
-          'gjs-preset-webpage': {}
-        }
+          plugins: ['grapesjs-preset-webpage'],
+          pluginsOpts: {
+            'grapesjs-preset-webpage': {}
+          }
+        });
       });
     </script>
   </body>

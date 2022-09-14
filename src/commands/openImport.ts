@@ -1,10 +1,18 @@
-export default (editor, config) => {
+import type grapesjs from 'grapesjs';
+import { RequiredPluginOptions } from '..';
+
+import { cmdImport } from './../consts';
+
+type CommandInterface = Parameters<grapesjs.Commands["add"]>[1];
+
+export default (editor: grapesjs.Editor, config: RequiredPluginOptions): CommandInterface => {
   const pfx = editor.getConfig('stylePrefix');
   const modal = editor.Modal;
-  const codeViewer = editor.CodeManager.getViewer('CodeMirror').clone();
   const container = document.createElement('div');
   const importLabel = config.modalImportLabel;
   const importCnt = config.modalImportContent;
+  // @ts-ignore
+  const codeViewer = editor.CodeManager.getViewer('CodeMirror').clone();
   let viewerEditor = codeViewer.editor;
 
   // Init import button
@@ -13,6 +21,7 @@ export default (editor, config) => {
   btnImp.innerHTML = config.modalImportButton;
   btnImp.className = `${pfx}btn-prim ${pfx}btn-import`;
   btnImp.onclick = e => {
+    editor.Css.clear();
     editor.setComponents(viewerEditor.getValue().trim());
     modal.close();
   };
@@ -46,13 +55,12 @@ export default (editor, config) => {
       modal.setContent(container);
       const cnt = typeof importCnt == 'function' ? importCnt(editor) : importCnt;
       codeViewer.setContent(cnt || '');
-      modal.open().getModel()
-      .once('change:open', () => editor.stopCommand(this.id));
+      modal.open().onceClose(() => editor.stopCommand(cmdImport))
       viewerEditor.refresh();
     },
 
     stop() {
       modal.close();
     }
-  }
-}
+  };
+};

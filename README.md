@@ -1,16 +1,12 @@
 # GrapesJS Preset Webpage
 
+[Demo](http://grapesjs.com/demo.html)
+
+> From the v1.* we don't include other plugins in this one anymore, so if you need them, you have to include them manually in your project. If you want to replicate the editor from the demo, please check the source of the demo [here](https://github.com/artf/grapesjs/blob/gh-pages/demo.html)
+
 ## Summary
 
-* Plugin name: **`gjs-preset-webpage`**
-* Includes:
-  * `grapesjs-blocks-basic` Basic set of blocks
-  * `grapesjs-navbar` Simple navbar component
-  * `grapesjs-component-countdown` Simple countdown component
-  * `grapesjs-plugin-forms` Set of form components and blocks
-  * `grapesjs-aviary` Add the Aviary Image Editor
-  * `grapesjs-plugin-filestack` Add Filestack uploader in Asset Manager
-  * `grapesjs-plugin-export` Export GrapesJS templates in a zip archive
+* Plugin name: **`grapesjs-preset-webpage`**
 * Commands:
   * `gjs-open-import-webpage` Opens a modal for the import
   * `set-device-desktop` Set desktop device
@@ -27,6 +23,7 @@
 | Option | Description | Default |
 | - | - | - |
 | `blocks` | Which blocks to add | `['link-block', 'quote', 'text-basic']` |
+|`block`| Add custom block options, based on block id|`(blockId) => ({})`|
 | `modalImportTitle` | Modal import title | `'Import'` |
 | `modalImportButton` | Modal import button text | `'Import'` |
 | `modalImportLabel` | Import description inside import modal | `''` |
@@ -34,30 +31,22 @@
 | `importViewerOptions` | Code viewer (eg. CodeMirror) options | `{}` |
 | `textCleanCanvas` | Confirm text before cleaning the canvas | `'Are you sure to clean the canvas?'` |
 | `showStylesOnChange` | Show the Style Manager on component change | `true` |
-| `textGeneral` | Text for General sector in Style Manager | `'General'` |
-| `textLayout` | Text for Layout sector in Style Manager | `'Layout'` |
-| `textTypography` | Text for Typography sector in Style Manager | `'Typography'` |
-| `textDecorations` | Text for Decorations sector in Style Manager | `'Decorations'` |
-| `textExtra` | Text for Extra sector in Style Manager | `'Extra'` |
-| `customStyleManager` | Use custom set of sectors for the Style Manager | `[]` |
-| `blocksBasicOpts` | `grapesjs-blocks-basic` plugin options. By setting this option to `false` will avoid loading the plugin | `{}` |
-| `navbarOpts` | `grapesjs-navbar` plugin options. By setting this option to `false` will avoid loading the plugin | `{}` |
-| `countdownOpts` | `grapesjs-component-countdown` plugin options. By setting this option to `false` will avoid loading the plugin | `{}` |
-| `formsOpts` | `grapesjs-plugin-forms` plugin options. By setting this option to `false` will avoid loading the plugin | `{}` |
-| `exportOpts` | `grapesjs-plugin-export` plugin options. By setting this option to `false` will avoid loading the plugin | `{}` |
-| `filestackOpts` | `grapesjs-plugin-filestack` plugin options. Filestack library should be included manually. By setting this option to `false` will avoid loading the plugin | `false` |
+| `useCustomTheme` | Load custom preset theme | `true` |
 
 ## Download
 
-```sh
-$ npm i grapesjs-preset-webpage
-```
+* CDN
+  * `https://unpkg.com/grapesjs-preset-webpage`
+* NPM
+  * `npm i grapesjs-preset-webpage`
+* GIT
+  * `git clone https://github.com/artf/grapesjs-preset-webpage.git`
 
 ## Usage
 
+Directly in the browser
 ```html
 <link href="path/to/grapes.min.css" rel="stylesheet"/>
-<link href="path/to/grapesjs-preset-webpage.min.css" rel="stylesheet"/>
 <script src="path/to/grapes.min.js"></script>
 <script src="path/to/grapesjs-preset-webpage.min.js"></script>
 
@@ -67,9 +56,9 @@ $ npm i grapesjs-preset-webpage
   var editor = grapesjs.init({
       container : '#gjs',
       ...
-      plugins: ['gjs-preset-webpage'],
+      plugins: ['grapesjs-preset-webpage'],
       pluginsOpts: {
-        'gjs-preset-webpage': {
+        'grapesjs-preset-webpage': {
           // options
         }
       }
@@ -77,30 +66,50 @@ $ npm i grapesjs-preset-webpage
 </script>
 ```
 
+Modern javascript
+```js
+import grapesjs from 'grapesjs';
+import plugin from 'grapesjs-preset-webpage';
+
+const editor = grapesjs.init({
+  container : '#gjs',
+  // ...
+  plugins: [plugin],
+  pluginsOpts: {
+    [plugin]: { /* options */ }
+  }
+  // or
+  plugins: [
+    editor => plugin(editor, { /* options */ }),
+  ],
+});
+```
+
 ## Development
 
 Clone the repository
 
 ```sh
-$ git clone git@github.com:artf/grapesjs-preset-webpage.git && cd grapesjs-preset-webpage
+$ git clone https://github.com/artf/grapesjs-preset-webpage.git
+$ cd grapesjs-blocks-basic
 ```
 
-Install dependencies
+Install it
 
 ```sh
 $ npm i
-```
-
-The plugin relies on GrapesJS via `peerDependencies`, so you have to install it manually (without adding it to package.json)
-
-```sh
-$ npm i grapesjs --no-save
 ```
 
 Start the dev server
 
 ```sh
 $ npm start
+```
+
+Build before the commit. This will also increase the patch level version of the package
+
+```sh
+$ npm run build
 ```
 
 ## License

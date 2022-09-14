@@ -2,12 +2,11 @@
   "name": "grapesjs-preset-webpage",
   "version": "0.1.11",
   "description": "GrapesJS Plugin Webpage Preset",
-  "main": "dist/grapesjs-preset-webpage.min.js",
+  "main": "dist/index.js",
+  "files": ["dist/"],
   "scripts": {
-    "lint": "eslint src",
-    "v:patch": "npm version --no-git-tag-version patch",
-    "build": "npm run v:patch && webpack --env.production && npm run build:css",
-    "start": "webpack-dev-server --mode=development --open --progress --color & npm run build:css -- -w",
+    "build": "grapesjs-cli build",
+    "start": "grapesjs-cli serve",
     "build:css": "node-sass src/style/main.scss dist/grapesjs-preset-webpage.min.css --output-style compressed"
   },
   "repository": {
@@ -23,37 +22,8 @@
   ],
   "author": "Artur Arseniev",
   "license": "BSD-3-Clause",
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-object-rest-spread"
-    ]
-  },
-  "peerDependencies": {
-    "grapesjs": "0.x"
-  },
   "devDependencies": {
-    "@babel/cli": "^7.15.7",
-    "@babel/core": "^7.17.10",
-    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
-    "@babel/preset-env": "^7.17.10",
-    "babel-loader": "^8.2.5",
-    "babel-preset-env": "^1.7.0",
-    "eslint": "^8.15.0",
-    "html-webpack-plugin": "^5.5.0",
-    "node-sass": "^7.0.1",
-    "webpack": "^5.72.1",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.9.0"
-  },
-  "dependencies": {
-    "grapesjs-blocks-basic": "^0.1.7",
-    "grapesjs-component-countdown": "^0.1.2",
-    "grapesjs-navbar": "^0.1.5",
-    "grapesjs-plugin-export": "^0.1.5",
-    "grapesjs-plugin-filestack": "^0.1.1",
-    "grapesjs-plugin-forms": "^0.3.5"
+    "grapesjs": "^0.19.5",
+    "grapesjs-cli": "^3.0.1"
   }
 }
