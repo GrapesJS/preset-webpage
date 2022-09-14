@@ -1,13 +1,14 @@
 {
   "name": "grapesjs-preset-webpage",
-  "version": "0.1.11",
+  "version": "1.0.1",
   "description": "GrapesJS Plugin Webpage Preset",
   "main": "dist/index.js",
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "grapesjs-cli build",
-    "start": "grapesjs-cli serve",
-    "build:css": "node-sass src/style/main.scss dist/grapesjs-preset-webpage.min.css --output-style compressed"
+    "start": "grapesjs-cli serve"
   },
   "repository": {
     "type": "git",
