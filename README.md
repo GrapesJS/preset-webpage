@@ -1,5 +1,7 @@
 # GrapesJS Preset Webpage
 
+[Demo](http://grapesjs.com/demo.html)
+
 ## Summary
 
 * Plugin name: **`grapesjs-preset-webpage`**
@@ -30,12 +32,16 @@
 
 ## Download
 
-```sh
-$ npm i grapesjs-preset-webpage
-```
+* CDN
+  * `https://unpkg.com/grapesjs-preset-webpage`
+* NPM
+  * `npm i grapesjs-preset-webpage`
+* GIT
+  * `git clone https://github.com/artf/grapesjs-preset-webpage.git`
 
 ## Usage
 
+Directly in the browser
 ```html
 <link href="path/to/grapes.min.css" rel="stylesheet"/>
 <link href="path/to/grapesjs-preset-webpage.min.css" rel="stylesheet"/>
@@ -48,9 +54,9 @@ $ npm i grapesjs-preset-webpage
   var editor = grapesjs.init({
       container : '#gjs',
       ...
-      plugins: ['gjs-preset-webpage'],
+      plugins: ['grapesjs-preset-webpage'],
       pluginsOpts: {
-        'gjs-preset-webpage': {
+        'grapesjs-preset-webpage': {
           // options
         }
       }
@@ -58,30 +64,50 @@ $ npm i grapesjs-preset-webpage
 </script>
 ```
 
+Modern javascript
+```js
+import grapesjs from 'grapesjs';
+import plugin from 'grapesjs-preset-webpage';
+
+const editor = grapesjs.init({
+  container : '#gjs',
+  // ...
+  plugins: [plugin],
+  pluginsOpts: {
+    [plugin]: { /* options */ }
+  }
+  // or
+  plugins: [
+    editor => plugin(editor, { /* options */ }),
+  ],
+});
+```
+
 ## Development
 
 Clone the repository
 
 ```sh
-$ git clone git@github.com:artf/grapesjs-preset-webpage.git && cd grapesjs-preset-webpage
+$ git clone https://github.com/artf/grapesjs-preset-webpage.git
+$ cd grapesjs-blocks-basic
 ```
 
-Install dependencies
+Install it
 
 ```sh
 $ npm i
-```
-
-The plugin relies on GrapesJS via `peerDependencies`, so you have to install it manually (without adding it to package.json)
-
-```sh
-$ npm i grapesjs --no-save
 ```
 
 Start the dev server
 
 ```sh
 $ npm start
+```
+
+Build before the commit. This will also increase the patch level version of the package
+
+```sh
+$ npm run build
 ```
 
 ## License
