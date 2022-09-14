@@ -11,6 +11,13 @@ export type PluginOptions = {
   blocks?: string[];
 
   /**
+   * Add custom block options, based on block id.
+   * @default (blockId) => ({})
+   * @example (blockId) => blockId === 'quote' ? { attributes: {...} } : {};
+   */
+  block?: (blockId: string) => ({});
+
+  /**
    * Modal import title.
    * @default 'Import'
    */
@@ -60,6 +67,7 @@ export type RequiredPluginOptions = Required<PluginOptions>;
 const plugin: grapesjs.Plugin<PluginOptions> = (editor, opts: Partial<PluginOptions> = {}) => {
   const config: RequiredPluginOptions = {
     blocks: ['link-block', 'quote', 'text-basic'],
+    block: () => ({}),
     modalImportTitle: 'Import',
     modalImportButton: 'Import',
     modalImportLabel: '',
