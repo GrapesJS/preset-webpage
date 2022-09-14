@@ -2,15 +2,7 @@
 
 ## Summary
 
-* Plugin name: **`gjs-preset-webpage`**
-* Includes:
-  * `grapesjs-blocks-basic` Basic set of blocks
-  * `grapesjs-navbar` Simple navbar component
-  * `grapesjs-component-countdown` Simple countdown component
-  * `grapesjs-plugin-forms` Set of form components and blocks
-  * `grapesjs-aviary` Add the Aviary Image Editor
-  * `grapesjs-plugin-filestack` Add Filestack uploader in Asset Manager
-  * `grapesjs-plugin-export` Export GrapesJS templates in a zip archive
+* Plugin name: **`grapesjs-preset-webpage`**
 * Commands:
   * `gjs-open-import-webpage` Opens a modal for the import
   * `set-device-desktop` Set desktop device
