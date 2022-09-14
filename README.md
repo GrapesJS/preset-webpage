@@ -27,6 +27,7 @@
 | Option | Description | Default |
 | - | - | - |
 | `blocks` | Which blocks to add | `['link-block', 'quote', 'text-basic']` |
+|`block`| Add custom block options, based on block id|`(blockId) => ({})`|
 | `modalImportTitle` | Modal import title | `'Import'` |
 | `modalImportButton` | Modal import button text | `'Import'` |
 | `modalImportLabel` | Import description inside import modal | `''` |
