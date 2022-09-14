@@ -31,6 +31,7 @@
 | `importViewerOptions` | Code viewer (eg. CodeMirror) options | `{}` |
 | `textCleanCanvas` | Confirm text before cleaning the canvas | `'Are you sure to clean the canvas?'` |
 | `showStylesOnChange` | Show the Style Manager on component change | `true` |
+| `useCustomTheme` | Load custom preset theme | `true` |
 
 ## Download
 
@@ -46,7 +47,6 @@
 Directly in the browser
 ```html
 <link href="path/to/grapes.min.css" rel="stylesheet"/>
-<link href="path/to/grapesjs-preset-webpage.min.css" rel="stylesheet"/>
 <script src="path/to/grapes.min.js"></script>
 <script src="path/to/grapesjs-preset-webpage.min.js"></script>
 
