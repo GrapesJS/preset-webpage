@@ -12,7 +12,7 @@ import {
 export default (editor: grapesjs.Editor, opts: RequiredPluginOptions) => {
   const { Panels } = editor;
   const config = editor.getConfig();
-  const swv = 'sw-visibility';
+  const swv = 'sw-visibility';
   const expt = 'export-template';
   const osm = 'open-sm';
   const otm = 'open-tm';
@@ -20,7 +20,7 @@ export default (editor: grapesjs.Editor, opts: RequiredPluginOptions) => {
   const obl = 'open-blocks';
   const ful = 'fullscreen';
   const prv = 'preview';
-  const iconStyle = 'style="display: block"';
+  const iconStyle = 'style="display: block; max-width:22px"';
 
   // @ts-ignore
   config.showDevices = false;
