@@ -24,7 +24,7 @@
   "author": "Artur Arseniev",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "grapesjs": "^0.19.5",
+    "grapesjs": "^0.20.4",
     "grapesjs-cli": "^3.0.1"
   }
 }

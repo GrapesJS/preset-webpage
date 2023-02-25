@@ -27,5 +27,5 @@ export default (editor: grapesjs.Editor, config: RequiredPluginOptions) => {
     run: ed => ed.setDevice('Mobile portrait'),
     stop: () => {},
   });
-  Commands.add(cmdClear, e => confirm(txtConfirm) && e.runCommand('core:canvas-clear'));
+  Commands.add(cmdClear, (e: grapesjs.Editor) => confirm(txtConfirm) && e.runCommand('core:canvas-clear'));
 }
