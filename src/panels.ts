@@ -1,4 +1,4 @@
-import type grapesjs from 'grapesjs';
+import type { Editor } from 'grapesjs';
 import { RequiredPluginOptions } from '.';
 
 import {
@@ -9,7 +9,7 @@ import {
   cmdClear
 } from './consts';
 
-export default (editor: grapesjs.Editor, opts: RequiredPluginOptions) => {
+export default (editor: Editor, opts: RequiredPluginOptions) => {
   const { Panels } = editor;
   const config = editor.getConfig();
   const swv = 'sw-visibility';
