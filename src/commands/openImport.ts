@@ -31,6 +31,7 @@ export default (editor: Editor, config: RequiredPluginOptions) => {
       if (!this.container) {
         const codeViewer = this.getCodeViewer();
         const container = document.createElement('div');
+        container.className = `${pfx}import-container`;
 
         // Import Label
         if (importLabel) {
