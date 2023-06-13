@@ -1,6 +1,6 @@
-import type grapesjs from 'grapesjs';
-import commands from './commands';
+import type { Editor, Plugin } from 'grapesjs';
 import blocks from './blocks';
+import commands from './commands';
 import panels from './panels';
 
 export type PluginOptions = {
@@ -41,7 +41,7 @@ export type PluginOptions = {
    * @default ''
    * @example editor => editor.getHtml()
    */
-  modalImportContent?: string | ((editor: grapesjs.Editor) => string);
+  modalImportContent?: string | ((editor: Editor) => string);
 
   /**
    * Code viewer (eg. CodeMirror) options.
@@ -70,7 +70,7 @@ export type PluginOptions = {
 
 export type RequiredPluginOptions = Required<PluginOptions>;
 
-const plugin: grapesjs.Plugin<PluginOptions> = (editor, opts: Partial<PluginOptions> = {}) => {
+const plugin: Plugin<PluginOptions> = (editor, opts: Partial<PluginOptions> = {}) => {
   const config: RequiredPluginOptions = {
     blocks: ['link-block', 'quote', 'text-basic'],
     block: () => ({}),
