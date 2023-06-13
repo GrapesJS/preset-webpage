@@ -1,20 +1,19 @@
-import type grapesjs from 'grapesjs';
+import type { Editor } from 'grapesjs';
 import { RequiredPluginOptions } from '..';
-
-import openImport from './openImport';
 import {
-  cmdImport,
+  cmdClear,
   cmdDeviceDesktop,
-  cmdDeviceTablet,
   cmdDeviceMobile,
-  cmdClear
+  cmdDeviceTablet,
 } from './../consts';
+import openImport from './openImport';
 
-export default (editor: grapesjs.Editor, config: RequiredPluginOptions) => {
+export default (editor: Editor, config: RequiredPluginOptions) => {
   const { Commands } = editor;
   const txtConfirm = config.textCleanCanvas;
 
-  Commands.add(cmdImport, openImport(editor, config));
+  openImport(editor, config);
+
   Commands.add(cmdDeviceDesktop, {
     run: ed => ed.setDevice('Desktop'),
     stop: () => {},
@@ -27,5 +26,5 @@ export default (editor: grapesjs.Editor, config: RequiredPluginOptions) => {
     run: ed => ed.setDevice('Mobile portrait'),
     stop: () => {},
   });
-  Commands.add(cmdClear, (e: grapesjs.Editor) => confirm(txtConfirm) && e.runCommand('core:canvas-clear'));
+  Commands.add(cmdClear, (e: Editor) => confirm(txtConfirm) && e.runCommand('core:canvas-clear'));
 }

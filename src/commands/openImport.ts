@@ -1,17 +1,13 @@
-import type grapesjs from 'grapesjs';
+import type { Editor } from 'grapesjs';
 import { RequiredPluginOptions } from '..';
-
 import { cmdImport } from './../consts';
 
-type CommandInterface = Parameters<grapesjs.Commands["add"]>[1];
-
-export default (editor: grapesjs.Editor, config: RequiredPluginOptions): CommandInterface => {
+export default (editor: Editor, config: RequiredPluginOptions) => {
   const pfx = editor.getConfig('stylePrefix');
   const modal = editor.Modal;
   const container = document.createElement('div');
   const importLabel = config.modalImportLabel;
   const importCnt = config.modalImportContent;
-  // @ts-ignore
   const codeViewer = editor.CodeManager.getViewer('CodeMirror').clone();
   let viewerEditor = codeViewer.editor;
 
@@ -33,7 +29,7 @@ export default (editor: grapesjs.Editor, config: RequiredPluginOptions): Command
     readOnly: 0
   }, ...config.importViewerOptions});
 
-  return {
+  editor.Commands.add(cmdImport, {
     run(editor) {
       if (!viewerEditor) {
         const txtarea = document.createElement('textarea');
@@ -62,5 +58,5 @@ export default (editor: grapesjs.Editor, config: RequiredPluginOptions): Command
     stop() {
       modal.close();
     }
-  };
+  });
 };

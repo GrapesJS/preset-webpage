@@ -22,7 +22,6 @@ export default (editor: Editor, opts: RequiredPluginOptions) => {
   const prv = 'preview';
   const iconStyle = 'style="display: block; max-width:22px"';
 
-  // @ts-ignore
   config.showDevices = false;
 
   Panels.getPanels().reset([
