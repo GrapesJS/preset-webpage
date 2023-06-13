@@ -2,7 +2,7 @@
 
 [Demo](http://grapesjs.com/demo.html)
 
-> From the v1.* we don't include other plugins in this one anymore, so if you need them, you have to include them manually in your project. If you want to replicate the editor from the demo, please check the source of the demo [here](https://github.com/artf/grapesjs/blob/gh-pages/demo.html)
+> From the v1.* we don't include other plugins in this one anymore, so if you need them, you have to include them manually in your project. If you want to replicate the editor from the demo, please check the source of the demo [here](https://github.com/GrapesJS/grapesjs/blob/gh-pages/demo.html)
 
 ## Summary
 
@@ -40,7 +40,7 @@
 * NPM
   * `npm i grapesjs-preset-webpage`
 * GIT
-  * `git clone https://github.com/artf/grapesjs-preset-webpage.git`
+  * `git clone https://github.com/GrapesJS/preset-webpage.git`
 
 ## Usage
 
@@ -90,7 +90,7 @@ const editor = grapesjs.init({
 Clone the repository
 
 ```sh
-$ git clone https://github.com/artf/grapesjs-preset-webpage.git
+$ git clone https://github.com/GrapesJS/preset-webpage.git
 $ cd grapesjs-blocks-basic
 ```
 
