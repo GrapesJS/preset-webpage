@@ -106,12 +106,6 @@ Start the dev server
 $ npm start
 ```
 
-Build before the commit. This will also increase the patch level version of the package
-
-```sh
-$ npm run build
-```
-
 ## License
 
 BSD 3-Clause
