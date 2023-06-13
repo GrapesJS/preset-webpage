@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>GrapesJS Preset Webpage</title>
     <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
-    <link href="dist/grapesjs-preset-webpage.min.css" rel="stylesheet">
     <script src="https://unpkg.com/grapesjs"></script>
     <style>
       body,
@@ -80,7 +79,7 @@
 
 
     <script type="text/javascript">
-      setTimeout(() => {
+      window.onload = () => {
         window.editor = grapesjs.init({
           height: '100%',
           showOffsets: true,
@@ -94,7 +93,7 @@
             'grapesjs-preset-webpage': {}
           }
         });
-      });
+      };
     </script>
   </body>
 </html>
