@@ -91,7 +91,7 @@ Clone the repository
 
 ```sh
 $ git clone https://github.com/GrapesJS/preset-webpage.git
-$ cd grapesjs-blocks-basic
+$ cd preset-webpage
 ```
 
 Install it
